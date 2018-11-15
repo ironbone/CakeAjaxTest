@@ -32,6 +32,14 @@ class UsersController extends AppController
         //Take a look at the changes in Application.php. I commented the security plugin
     }
 
+
+    public function all()
+    {
+        $users = $this->Users->find('all');
+
+        $this->set(compact('users'));
+    }
+
     public function add(){
 
         $data = $this->getRequest()->getData("users");
