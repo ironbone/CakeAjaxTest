@@ -2,6 +2,7 @@ var application_name = "";
 var user_nr = 0;
 
 function add_new_user() {
+    $("#first_user").empty();
     user_nr++;
     $("#users").append("<div>User " + user_nr + " Name: <input id='name" + user_nr + "'> Age: <input id='age" + user_nr + "'></div>");
 
@@ -38,12 +39,10 @@ function add_to_database() {
 
 function show_first_user()  {
     var user;
-    $("#users").empty();
     $("#first_user").empty();
 
     $.get("/" + application_name + "users/first")
         .done(function (response) {
-            console.log(response);
             response = JSON.parse(response);
             if(response["status"] == "ok"){
                 user = response["user"];
