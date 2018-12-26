@@ -31,6 +31,8 @@ function add_to_database() {
 
 
     $("#users").empty();
+    $("#first_user").empty();
+
     user_nr = 0;
 }
 
@@ -45,6 +47,7 @@ function show_first_user()  {
             };
         });
 
+    $("#users").empty();
     $("#first_user").empty();
     $("#first_user").append('<h3>First User</h3> Name: ' + user['name'] + '<br>Age: ' + user['age']);
 }
