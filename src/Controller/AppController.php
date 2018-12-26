@@ -12,10 +12,12 @@
  * @since     0.2.9
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+
 
 /**
  * Application Controller
@@ -52,5 +54,14 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
 
+    }
+
+
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->response = $this->response->cors($this->request)
+            ->allowOrigin(['*'])
+            ->build();
     }
 }
