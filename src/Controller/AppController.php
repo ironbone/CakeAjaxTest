@@ -57,9 +57,9 @@ class AppController extends Controller
     }
 
 
-    public function beforeFilter(Event $event)
+    public function beforeRender(Event $event)
     {
-        parent::beforeFilter($event);
+        parent::beforeRender($event);
         $this->response = $this->response->cors($this->request)
             ->allowOrigin(['*'])
             ->build();
