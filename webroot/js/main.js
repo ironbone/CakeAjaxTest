@@ -43,7 +43,7 @@ function show_first_user()  {
         .done(function (response) {
             response = JSON.parse(response);
             if(response["status"] == "ok"){
-                user = response["first"];
+                user = response["user"];
             };
         });
 
