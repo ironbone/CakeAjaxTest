@@ -42,8 +42,10 @@ function show_first_user()  {
     $.get("/" + application_name + "users/first")
         .done(function (response) {
             response = JSON.parse(response);
+            console.log(response);
             if(response["status"] == "ok"){
                 user = response["user"];
+                console.log(user);
             };
         });
 
