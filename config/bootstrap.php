@@ -44,7 +44,7 @@ use Cake\Mailer\Email;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
 
-header("Access-Control-Allow-Origin: *");
+
 
 /**
  * Uncomment block of code below if you want to use `.env` file during development.
