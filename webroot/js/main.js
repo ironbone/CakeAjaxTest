@@ -43,6 +43,7 @@ function show_first_user()  {
 
     $.get("/" + application_name + "users/first")
         .done(function (response) {
+            console.log(response);
             response = JSON.parse(response);
             if(response["status"] == "ok"){
                 user = response["user"];
