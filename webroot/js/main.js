@@ -38,14 +38,14 @@ function add_to_database() {
 }
 
 function show_first_user()  {
-    var user;
+
     $("#first_user").empty();
 
     $.get("/" + application_name + "users/first")
         .done(function (response) {
             response = JSON.parse(response);
             if(response["status"] == "ok"){
-                user = response["user"];
+                var user = response["user"];
                 $("#first_user").append('<h3>First User</h3> Name: ' + user['name'] + '<br>Age: ' + user['age']);
             };
         });
