@@ -40,19 +40,26 @@ class UsersController extends AppController
         $this->set(compact('users'));
     }
 
-    public function add(){
+    public function first()
+    {
+        $user = $this->Users->find('all')->first();
+        $this->set(compact('user'));
+
+        $this->viewBuilder()->setLayout("ajax");
+    }
+
+    public function add()
+    {
 
         $data = $this->getRequest()->getData("users");
         $this->log($data);
 
-        foreach ($data as $user){
+        foreach ($data as $user) {
             $entity = $this->Users->newEntity();
             $entity->set("name", $user[0]);
             $entity->set("age", $user[1]);
             $this->Users->save($entity);
         }
-
-
 
 
         $this->viewBuilder()->setLayout("ajax");

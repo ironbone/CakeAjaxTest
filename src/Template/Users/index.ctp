@@ -13,6 +13,8 @@ echo $this->Html->script('main');
 
 <!-- I do not use form tag cecause I will send my data using Ajax-->
 <div id="users"></div>
+<div id="first_user"></div>
 <br><br>
 <button onclick="add_to_database()">Add all users to the database</button>
-
+<br>
+<button onclick="show_first_user()">Show the first user</button>

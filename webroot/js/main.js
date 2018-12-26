@@ -33,3 +33,18 @@ function add_to_database() {
     $("#users").empty();
     user_nr = 0;
 }
+
+function show_first_user()  {
+    var user;
+
+    $.get("/" + application_name + "users/first")
+        .done(function (response) {
+            response = JSON.parse(response);
+            if(response["status"] == "ok"){
+                user = response["first"];
+            };
+        });
+
+    $("#first_user").empty();
+    $("#first_user").append('<h3>First User</h3> Name: ' + user['name'] + '<br>Age: ' + user['age']);
+}
