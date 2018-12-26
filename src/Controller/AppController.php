@@ -52,6 +52,5 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
 
-        $this->response->withAddedHeader('Access-Control-Allow-Origin', '*');
     }
 }
