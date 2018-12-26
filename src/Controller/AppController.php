@@ -52,13 +52,6 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
 
-        $this->response = $this->response->cors($this->request)
-            ->allowOrigin(['*'])
-            ->allowMethods(['GET', 'POST'])
-            ->allowHeaders(['X-CSRF-Token'])
-            ->allowCredentials()
-            ->exposeHeaders(['Link'])
-            ->maxAge(300)
-            ->build();
+        $this->response->header('Access-Control-Allow-Origin', '*');
     }
 }
