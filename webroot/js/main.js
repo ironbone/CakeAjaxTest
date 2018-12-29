@@ -41,7 +41,7 @@ function show_first_user()  {
 
     $("#first_user").empty();
 
-    $.get("http://cakeajax-cakeajax.a3c1.starter-us-west-1.openshiftapps.com/users/first")
+    $.getJSON("http://cakeajax-cakeajax.a3c1.starter-us-west-1.openshiftapps.com/users/first")
         .done(function (response) {
             response = JSON.parse(response);
             if(response["status"] == "ok"){
