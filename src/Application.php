@@ -56,9 +56,6 @@ class Application extends BaseApplication
             $this->addPlugin(\DebugKit\Plugin::class);
         }
 
-        $this->response = $this->response->cors($this->request)
-            ->allowOrigin(['*'])
-            ->build();
     }
 
     /**

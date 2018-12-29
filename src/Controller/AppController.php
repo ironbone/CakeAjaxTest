@@ -54,6 +54,10 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
 
+        $this->response = $this->response->cors($this->request)
+            ->allowOrigin(['*'])
+            ->build();
+
     }
 
 
