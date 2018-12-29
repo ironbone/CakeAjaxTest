@@ -60,8 +60,8 @@ class AppController extends Controller
     public function beforeRender(Event $event)
     {
         parent::beforeRender($event);
-        $this->response = $this->response->cors($this->request)
-            ->allowOrigin(['*'])
-            ->build();
+//        $this->response = $this->response->cors($this->request)
+//            ->allowOrigin(['*'])
+//            ->build();
     }
 }
